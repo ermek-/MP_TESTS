@@ -25,7 +25,7 @@
    pip install -r requirements.txt
    ```
 5. Укажите значения переменных `USERNAME` и `PASSWORD` в файле `.env` или 
-   в переменных окружения.
+   в переменных окружения. Пример в .env.example
 6. Запустите тесты:
    ```bash
    pytest

@@ -31,7 +31,7 @@
    pytest
    ```
 
-7. Для генерации Allure-репорта запустите тесты с указанием каталога для результатов:
+7. Для генерации Allure-репорта убедитесь, что установлен [Allure CLI](https://docs.qameta.io/allure/), затем запустите тесты:
    ```bash
    pytest --alluredir=allure-results
    ```

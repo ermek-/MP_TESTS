@@ -1,7 +1,12 @@
 import pytest
 import requests
 import os
-from dotenv import load_dotenv
+try:
+    from dotenv import load_dotenv
+except ImportError:  # pragma: no cover - optional dependency
+    def load_dotenv(*args, **kwargs):
+        """Fallback when python-dotenv isn't available."""
+        return False
 
 load_dotenv()
 host = 'http://www.api.dev.pkmt.tech'

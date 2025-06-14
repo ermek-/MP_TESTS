@@ -31,11 +31,8 @@
    pytest
    ```
 
-7. Для генерации Allure-репорта убедитесь, что установлен [Allure CLI](https://docs.qameta.io/allure/), затем запустите тесты:
-   ```bash
-   pytest --alluredir=allure-results
-   ```
-   После завершения тестов откройте отчет командой:
+7. Убедитесь, что установлен [Allure CLI](https://docs.qameta.io/allure/). Результаты для отчёта сохраняются автоматически при запуске `pytest`.
+   После завершения тестов откройте отчёт командой:
    ```bash
    allure serve allure-results
    ```

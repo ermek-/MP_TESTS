@@ -1,0 +1,12 @@
+{
+  "number": "{{randomNumber}}",
+  "date_get": "2025-05-26",
+  "required_date": "2025-05-26",
+  "date_complite": "2025-05-26",
+  "priority": "{{randomInt}}",
+  "customer": "{{randomUserName}}",
+  "client_order": 1,
+  "description": "{{randomStreetAddress}}",
+  "avaible_quantity": "{{randomLastName}}",
+  "ready_persent": "{{randomInt}}"
+}

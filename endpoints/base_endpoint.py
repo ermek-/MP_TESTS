@@ -1,7 +1,34 @@
-class Endpoint:
-    response = None
-    response_json = None
-    host = 'http://www.api.dev.pkmt.tech'
+import logging
+from typing import Optional
 
-    def check_response_is_200(self):
-        assert self.response.check_response_is_200() == 200
+import requests
+
+
+logger = logging.getLogger(__name__)
+
+
+class Endpoint:
+    """Base class for API endpoints."""
+
+    response: Optional[requests.Response] = None
+    response_json = None
+    host = "http://www.api.dev.pkmt.tech"
+
+    def _log_request_response(self) -> None:
+        """Log request and response details for debugging."""
+
+        if not self.response:
+            return
+
+        req = self.response.request
+        logger.debug("Request %s %s", req.method, req.url)
+        logger.debug("Request headers: %s", dict(req.headers))
+        logger.debug("Request body: %s", req.body)
+
+        logger.debug("Response status: %s", self.response.status_code)
+        logger.debug("Response headers: %s", dict(self.response.headers))
+        logger.debug("Response body: %s", self.response.text)
+
+    def check_response_is_200(self) -> None:
+        assert self.response is not None
+        assert self.response.status_code == 200

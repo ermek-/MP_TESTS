@@ -10,4 +10,5 @@ class DeleteOrder(Endpoint):
         self._log_request_response()
 
     def check_status_code(self):
-        assert self.response == 200
+        assert self.response is not None
+        assert self.response.status_code == 200

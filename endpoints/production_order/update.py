@@ -9,6 +9,3 @@ class UpdateOrder(Endpoint):
             headers=headers,
         )
         self._log_request_response()
-
-    def check_number(self, number):
-        assert self.response_json["number"] == number

@@ -3,6 +3,8 @@ import random
 import string
 from pathlib import Path
 
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
 
 def _generate_value(token: str):
     if token == "{{randomNumber}}":
@@ -34,3 +36,8 @@ def load_payload(path):
     with path.open() as f:
         data = json.load(f)
     return _fill_placeholders(data)
+
+
+def get_payload_path(*parts: str) -> Path:
+    """Return absolute path to payload located in the data directory."""
+    return PROJECT_ROOT / "data" / Path(*parts)

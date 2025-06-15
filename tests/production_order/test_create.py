@@ -1,20 +1,13 @@
 from endpoints.production_order.create import CreateOrder
+from tests.payload_utils import load_payload
+from pathlib import Path
+
 
 def test_create_production_order(auth_headers):
     endpoint = CreateOrder()
-    payload = {
-  "number": "payment_test",
-  "date_get": "2025-05-26",
-  "required_date": "2025-05-26",
-  "date_complite": "2025-05-26",
-  "priority": 455,
-  "customer": "Nichole21",
-  "client_order": 1,
-  "description": "6832 Stefanie Station",
-  "avaible_quantity": "Toy",
-  "ready_persent": 101
-}
-    endpoint.new_object(payload=payload, headers=auth_headers)
+    payload_path = Path(__file__).resolve().parents[2] / "data" / "production_order" / "create_production_order.json"
+    payload = load_payload(payload_path)
+    endpoint.new_object(headers=auth_headers, payload=payload)
     endpoint.check_number(payload['number'])
 
 

@@ -1,7 +1,5 @@
 import requests
-
 from endpoints.base_endpoint import Endpoint
-
 
 class CreateOrder(Endpoint):
     def new_object(self, payload, headers):
@@ -15,4 +13,3 @@ class CreateOrder(Endpoint):
 
     def check_number(self, number):
         assert self.response_json["number"] == number
-

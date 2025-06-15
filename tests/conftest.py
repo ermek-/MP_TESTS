@@ -20,3 +20,4 @@ def auth_token():
 @pytest.fixture
 def auth_headers(auth_token):
     return {"Authorization": f"JWT {auth_token}"}
+

@@ -1,5 +1,5 @@
 from endpoints.production_order.get import GetOrder
 
-def test_create_production_order(auth_headers):
+def test_get_production_order(auth_headers):
     endpoint = GetOrder()
-    endpoint.new_object(headers=auth_headers)
+    endpoint.get_object(headers=auth_headers)

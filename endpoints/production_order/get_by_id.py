@@ -1,10 +1,10 @@
 import requests
 from endpoints.base_endpoint import Endpoint
 
-class GetOrder(Endpoint):
-    def get_object(self, headers):
+class GetByIdOrder(Endpoint):
+    def get_by_id_object(self, headers, order_id):
         self.response =  requests.get(
-            f'{self.host}/ProductionOrder/v1/ProductionOrders/',
+            f'{self.host}/ProductionOrder/v1/ProductionOrders/{order_id}/',
             headers=headers
         )
         self.response_json = self.response.json()

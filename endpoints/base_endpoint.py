@@ -1,13 +1,15 @@
+"""Base classes and utilities for API endpoints."""
+
 import logging
 from typing import Optional
 
-import requests
+import requests  # pylint: disable=import-error
 
 
 logger = logging.getLogger(__name__)
 
 
-class Endpoint:
+class Endpoint:  # pylint: disable=too-few-public-methods
     """Base class for API endpoints."""
 
     response: Optional[requests.Response] = None
@@ -30,5 +32,7 @@ class Endpoint:
         logger.debug("Response body: %s", self.response.text)
 
     def check_response_is_200(self) -> None:
+        """Assert that the last response had a ``200`` status code."""
+
         assert self.response is not None
         assert self.response.status_code == 200

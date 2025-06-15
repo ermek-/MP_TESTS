@@ -24,11 +24,17 @@
    ```bash
    pip install -r requirements.txt
    ```
-5. Укажите значения переменных `USERNAME` и `PASSWORD` в файле `.env` или 
+5. Укажите значения переменных `USERNAME` и `PASSWORD` в файле `.env` или
    в переменных окружения. Пример в .env.example
 6. Запустите тесты:
    ```bash
    pytest
+   ```
+
+7. Убедитесь, что установлен [Allure CLI](https://docs.qameta.io/allure/). Результаты для отчёта сохраняются автоматически при запуске `pytest`.
+   После завершения тестов откройте отчёт командой:
+   ```bash
+   allure serve allure-results
    ```
 
 ## Структура проекта

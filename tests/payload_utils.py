@@ -38,6 +38,12 @@ def load_payload(path):
     return _fill_placeholders(data)
 
 
+def load_json(path):
+    path = Path(path)
+    with path.open() as f:
+        return json.load(f)
+
+
 def get_payload_path(*parts: str) -> Path:
     """Return absolute path to payload located in the data directory."""
     return PROJECT_ROOT / "data" / Path(*parts)

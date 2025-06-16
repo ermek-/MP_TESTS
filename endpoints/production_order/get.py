@@ -9,7 +9,3 @@ class GetOrder(Endpoint):
         )
         self.response_json = self.response.json()
         self._log_request_response()
-
-    def check_status_code(self):
-        assert self.response is not None
-        assert self.response.status_code == 200

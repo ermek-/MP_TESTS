@@ -8,7 +8,8 @@ def test_get_by_id_production_order(auth_headers):
     payload = load_payload(payload_path)
     create_endpoint.new_object(payload=payload, headers=auth_headers)
     order_id = create_endpoint.response_json["id"]
+    assert create_endpoint.check_response_code_is_(201)
 
     endpoint = GetByIdOrder()
     endpoint.get_by_id_object(order_id=order_id, headers=auth_headers)
-    endpoint.check_status_code(200)
+    assert endpoint.check_response_code_is_(200)

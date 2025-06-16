@@ -8,7 +8,3 @@ class DeleteOrder(Endpoint):
             headers=headers
         )
         self._log_request_response()
-
-    def check_status_code(self):
-        assert self.response is not None
-        assert self.response.status_code == 200

@@ -9,10 +9,12 @@ def test_delete_production_order(auth_headers):
     payload = load_payload(payload_path)
     create_endpoint.new_object(payload=payload, headers=auth_headers)
     order_id = create_endpoint.response_json["id"]
+    assert create_endpoint.check_response_code_is_(201)
 
     delete_endpoint = DeleteOrder()
     delete_endpoint.delete_object(order_id=order_id, headers=auth_headers)
+    assert delete_endpoint.check_response_code_is_(200)
 
     get_by_id_endpoint = GetByIdOrder()
     get_by_id_endpoint.get_by_id_object(order_id=order_id, headers=auth_headers)
-    assert get_by_id_endpoint.response.status_code == 404
+    assert get_by_id_endpoint.check_response_code_is_(404)

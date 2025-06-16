@@ -9,7 +9,3 @@ class GetByIdOrder(Endpoint):
         )
         self.response_json = self.response.json()
         self._log_request_response()
-
-    def check_status_code(self, status_code):
-        assert self.response is not None
-        assert self.response.status_code == status_code

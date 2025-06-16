@@ -1,11 +1,8 @@
 import logging
 from typing import Optional
-
 import requests
 
-
 logger = logging.getLogger(__name__)
-
 
 class Endpoint:
     """Base class for API endpoints."""
@@ -29,6 +26,5 @@ class Endpoint:
         logger.debug("Response headers: %s", dict(self.response.headers))
         logger.debug("Response body: %s", self.response.text)
 
-    def check_response_is_200(self) -> None:
-        assert self.response is not None
-        assert self.response.status_code == 200
+    def check_response_code_is_(self, status):
+        return self.response.status_code == status

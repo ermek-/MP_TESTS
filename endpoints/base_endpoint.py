@@ -1,6 +1,8 @@
 import logging
 from typing import Optional
 
+from jsonschema import validate
+
 import requests
 
 
@@ -32,3 +34,8 @@ class Endpoint:
     def check_response_is_200(self) -> None:
         assert self.response is not None
         assert self.response.status_code == 200
+
+    def validate_json_schema(self, schema: dict) -> None:
+        """Validate response JSON against the provided schema."""
+        assert self.response_json is not None
+        validate(self.response_json, schema)

@@ -1,0 +1,34 @@
+{
+  "type": "object",
+  "required": [
+    "id",
+    "number",
+    "date_get",
+    "required_date",
+    "date_complite",
+    "priority",
+    "status",
+    "company",
+    "customer",
+    "client_order",
+    "nomenclatures"
+  ],
+  "properties": {
+    "id": {"type": "integer"},
+    "number": {"type": ["string", "null"], "maxLength": 100},
+    "date_get": {"type": ["string", "null"], "format": "date"},
+    "required_date": {"type": ["string", "null"], "format": "date"},
+    "date_complite": {"type": ["string", "null"], "format": "date"},
+    "priority": {
+      "type": ["integer", "null"],
+      "minimum": -2147483648,
+      "maximum": 2147483647
+    },
+    "status": {"type": "string"},
+    "company": {"type": ["integer", "null"]},
+    "customer": {"type": ["string", "null"], "maxLength": 255},
+    "client_order": {"type": ["integer", "null"]},
+    "nomenclatures": {"type": "array"}
+  },
+  "additionalProperties": true
+}

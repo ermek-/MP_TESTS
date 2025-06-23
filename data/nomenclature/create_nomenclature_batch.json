@@ -1,0 +1,14 @@
+{
+    "code": "test code",
+    "count": 777,
+    "is_deficit": false,
+    "tecnological_procces": 0,
+    "provision": 0,
+    "manufacturer": 0,
+    "at_work": 0,
+    "shipment": 0,
+    "in_stock": 0,
+    "deficit": 0,
+    "defect": 0,
+    "ready_persent": 0
+}

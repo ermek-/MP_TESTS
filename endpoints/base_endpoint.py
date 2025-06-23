@@ -1,5 +1,8 @@
 import logging
 from typing import Optional
+
+from jsonschema import validate
+
 import requests
 
 logger = logging.getLogger(__name__)
@@ -28,3 +31,8 @@ class Endpoint:
 
     def check_response_code_is_(self, status):
         return self.response.status_code == status
+
+    def validate_json_schema(self, schema: dict) -> None:
+        """Validate response JSON against the provided schema."""
+        assert self.response_json is not None
+        return validate(self.response_json, schema)

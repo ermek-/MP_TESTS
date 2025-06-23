@@ -35,9 +35,4 @@ class Endpoint:
     def validate_json_schema(self, schema: dict) -> None:
         """Validate response JSON against the provided schema."""
         assert self.response_json is not None
-        validate(self.response_json, schema)
-
-    def validate_json_schema(self, schema: dict) -> None:
-        """Validate response JSON against the provided schema."""
-        assert self.response_json is not None
-        validate(self.response_json, schema)
+        return validate(self.response_json, schema)

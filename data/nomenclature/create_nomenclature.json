@@ -1,0 +1,17 @@
+{
+    "name": "{{randomUserName}}",
+    "prod_process": 1,
+    "is_composite": true,
+    "count": "{{randomInt}}",
+    "time_planned": "18:19:18",
+    "status": "create",
+    "avaible_count": "{{randomInt}}",
+    "remained_count": "{{randomInt}}",
+    "actual_time": "18:19:18",
+    "material": "{{randomProductMaterial}}",
+    "assortiment": "{{randomJobArea}}",
+    "dimensions": "{{randomAbbreviation}}",
+    "passed_count": "{{randomInt}}",
+    "priory": 0,
+    "plan_number": "{{randomFileName}}"
+}
